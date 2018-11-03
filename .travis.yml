@@ -3,8 +3,7 @@ os:
 - osx
 - windows
 
-jdk:
-- oraclejdk8
+language: java
 
 addons:
   apt:
