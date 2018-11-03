@@ -22,7 +22,7 @@ matrix:
     jdk: openjdk8
   - os: osx
 
-osx_image: xcode9.3
+#osx_image: xcode9.3
 
 before_install:
 
@@ -30,5 +30,5 @@ install:
 - mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
 
 script:
-- echo "TRAVIS_OS_NAME = ${$TRAVIS_OS_NAME}"
+- echo "TRAVIS_OS_NAME = ${TRAVIS_OS_NAME}"
 - mvn package -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true
