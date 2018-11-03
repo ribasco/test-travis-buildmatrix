@@ -3,6 +3,9 @@ os:
 - osx
 - windows
 
+jdk:
+- oraclejdk8
+
 addons:
   apt:
     sources:
