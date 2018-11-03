@@ -1,0 +1,19 @@
+os:
+- linux
+- osx
+- windows
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - oracle-java8-installer
+
+before_install:
+
+install:
+- mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
+
+script:
+- mvn package -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true
