@@ -17,19 +17,17 @@ addons:
 #    jdk: openjdk8
 #  - os: osx
 
+os:
+- linux
+- osx
+
 jobs:
   include:
+  - before_install: echo "Running BEFORE install for all"
   - stage: Unit Tests
-    before_install: echo "Running before install"
     script: echo "Running Unit Tests"
-    os:
-    - linux
-    - osx
   - stage: Integration Tests
     script: echo "Running Integration Tests"
-    os:
-    - linux
-    - osx
   - stage: Deploy
     script: echo "Running deploy script"
 
