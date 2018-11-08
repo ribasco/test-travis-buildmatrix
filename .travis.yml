@@ -32,10 +32,21 @@ matrix:
       apt:
         packages:
         - oracle-java8-installer
+    install:
+    - mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
+    script:
+    - echo "Test Script 1"
+    - echo "Test Script 2"
+    - echo "Test Script 3"
   - os: osx
     jdk: oraclejdk8
     osx_image: xcode9.3
-
+    install:
+    - mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
+    script:
+    - echo "Test Script 1 (MAC)"
+    - echo "Test Script 2 (MAC)"
+    - echo "Test Script 3 (MAC)"
 
   - #jobs:
     #  include:
@@ -62,11 +73,8 @@ matrix:
 
     #osx_image: xcode9.3
 
-before_install:
 
-install:
-- mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
 
-script:
-- echo "TRAVIS_OS_NAME = ${TRAVIS_OS_NAME}"
-- mvn package -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true
+    #script:
+  #- echo "TRAVIS_OS_NAME = ${TRAVIS_OS_NAME}"
+#- mvn package -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true
