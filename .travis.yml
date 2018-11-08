@@ -21,7 +21,6 @@ jdk: oraclejdk8
 
 jobs:
   include:
-  - before_install: echo "Running BEFORE install for all"
   - stage: Unit Tests
     script: echo "Running Unit Tests"
     os:
