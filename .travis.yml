@@ -28,6 +28,7 @@ language: java
 matrix:
   include:
   - os: linux
+    language: java
     addons:
       apt:
         packages:
