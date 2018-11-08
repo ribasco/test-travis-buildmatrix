@@ -39,10 +39,6 @@ matrix:
     - echo "Test Script 1"
     - echo "Test Script 2"
     - echo "Test Script 3"
-    jobs:
-      include:
-      - script: echo "Job Script 1"
-      - script: echo "Job Script 2"
   - os: osx
     jdk: oraclejdk8
     osx_image: xcode9.3
@@ -53,6 +49,12 @@ matrix:
     - echo "Test Script 2 (MAC)"
     - echo "Test Script 3 (MAC)"
 
+jobs:
+  include:
+  - stage: test
+    script: echo "Test Script"
+  - stage: deploy
+    script: echo "Deploy script""
 
   - #jobs:
     #  include:
