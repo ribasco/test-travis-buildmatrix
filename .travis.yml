@@ -24,32 +24,42 @@ matrix:
   - os: linux
     jdk: oraclejdk8
   - os: osx
+    jdk: oraclejdk8
     osx_image: xcode9.3
 
-#jobs:
-#  include:
-#  - stage: Unit Tests
-#    script: echo "Running Unit Tests"
-#    os:
-#    - linux
-#    - osx
-#  - stage: Integration Tests
-#    script: echo "Running Integration Tests"
-#    os:
-#    - linux
-#    - osx
-#  - stage: Deploy
-#    script: echo "Running deploy script"
+jobs:
+  include:
+  - stage: Unit Tests
+    script: echo "Unit Tests"
+  - stage: Integration Tests
+    script: echo "Integration Tests"
 
 
-#  - stage: Unit Tests
-#    before_install: echo "Unit Tests Before install"
-#    install: echo "Unit tests install"
-#    script: echo "Unit Tests stage"
-#  - stage: Integration Test
-#    script: echo "Deploying to GitHub releases ..."
 
-#osx_image: xcode9.3
+  - #jobs:
+    #  include:
+    #  - stage: Unit Tests
+    #    script: echo "Running Unit Tests"
+    #    os:
+    #    - linux
+    #    - osx
+    #  - stage: Integration Tests
+    #    script: echo "Running Integration Tests"
+    #    os:
+    #    - linux
+    #    - osx
+    #  - stage: Deploy
+    #    script: echo "Running deploy script"
+
+
+    #  - stage: Unit Tests
+    #    before_install: echo "Unit Tests Before install"
+    #    install: echo "Unit tests install"
+    #    script: echo "Unit Tests stage"
+    #  - stage: Integration Test
+    #    script: echo "Deploying to GitHub releases ..."
+
+    #osx_image: xcode9.3
 
 before_install:
 
