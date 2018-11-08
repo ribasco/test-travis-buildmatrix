@@ -1,8 +1,3 @@
-os:
-- linux
-- osx
-# - windows # java not yet supported on windows
-
 cache:
   directories:
   - $HOME/.m2
@@ -25,17 +20,15 @@ addons:
 jobs:
   include:
   - script: echo "Running script (1)"
-  - script: echo "Running script (2)"
-  - stage: Unit Tests
-    before_install: echo "Unit Tests Before install"
-    install: echo "Unit tests install"
-    script: echo "Unit Tests stage"
-    os:
-    - linux
-    - osx
-  - stage: Integration Test
-    script: echo "Deploying to GitHub releases ..."
+  - script: echo "Script #2"
 
+
+#  - stage: Unit Tests
+#    before_install: echo "Unit Tests Before install"
+#    install: echo "Unit tests install"
+#    script: echo "Unit Tests stage"
+#  - stage: Integration Test
+#    script: echo "Deploying to GitHub releases ..."
 
 #osx_image: xcode9.3
 
