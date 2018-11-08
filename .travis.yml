@@ -53,8 +53,14 @@ jobs:
   include:
   - stage: test
     script: echo "Test Script"
+    os:
+    - linux
+    - osx
   - stage: deploy
     script: echo "Deploy script""
+    os:
+    - linux
+    - osx
 
   - #jobs:
     #  include:
