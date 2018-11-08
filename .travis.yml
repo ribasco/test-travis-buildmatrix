@@ -20,7 +20,9 @@ addons:
 jobs:
   include:
   - script: echo "Running script (1)"
+    name: Test 1
   - script: echo "Script #2"
+    name: Test 2
 
 
 #  - stage: Unit Tests
