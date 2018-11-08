@@ -9,8 +9,6 @@ language: java
 #    packages:
 #    - oracle-java8-installer
 
-jdk: oraclejdk8
-
 #matrix:
 #  include:
 #  - os: linux
@@ -27,19 +25,16 @@ jdk: oraclejdk8
 #     jdk: oraclejdk8
 #     osx_image: xcode9.3
 
-os:
-- linux
-- osx
-
-osx_image: xcode9.3
-
-jobs:
+matrix:
   include:
-  - stage: Unit Tests
-    script: echo "Unit Tests"
-  - stage: Integration Tests
-    script: echo "Integration Tests"
-
+  - os: linux
+    addons:
+      apt:
+        packages:
+        - oracle-java8-installer
+  - os: osx
+    jdk: oraclejdk8
+    osx_image: xcode9.3
 
 
   - #jobs:
