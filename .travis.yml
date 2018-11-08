@@ -36,31 +36,15 @@ matrix:
     install:
     - mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
     script:
-    - echo "Test Script 1"
-    - echo "Test Script 2"
-    - echo "Test Script 3"
+    - mvn test && mvn verify
   - os: osx
     jdk: oraclejdk8
     osx_image: xcode9.3
     install:
     - mvn install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
     script:
-    - echo "Test Script 1 (MAC)"
-    - echo "Test Script 2 (MAC)"
-    - echo "Test Script 3 (MAC)"
+    - mvn test && mvn verify
 
-jobs:
-  include:
-  - stage: test
-    script: echo "Test Script"
-    os:
-    - linux
-    - osx
-  - stage: deploy
-    script: echo "Deploy script""
-    os:
-    - linux
-    - osx
 
   - #jobs:
     #  include:
