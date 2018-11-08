@@ -20,9 +20,16 @@ addons:
 jobs:
   include:
   - stage: Unit Tests
+    before_install: echo "Running before install"
     script: echo "Running Unit Tests"
+    os:
+    - linux
+    - osx
   - stage: Integration Tests
     script: echo "Running Integration Tests"
+    os:
+    - linux
+    - osx
   - stage: Deploy
     script: echo "Running deploy script"
 
